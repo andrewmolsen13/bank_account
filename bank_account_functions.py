@@ -41,13 +41,6 @@ def withdraw():
 
 def acc_info():
     acc_name = account.account_name
-    acc_number = account.account_number
+    acc_number = ''.join(account.account_number)
     acc_balance = account.balance
     return acc_name, acc_number, acc_balance
-
-
-
-
-#     elif menu_choice == 3:
-
-#     elif menu_choice == 4:
