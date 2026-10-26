@@ -13,7 +13,7 @@ class account:
         self.amount = amount
         account.balance += self.amount
         return account.balance
-    def withdrawl (self, amount_less):
+    def withdraw (self, amount_less):
         self.amount_less = amount_less
         account.balance -= self.amount_less
         return account.balance
@@ -22,7 +22,7 @@ def menu():
     menu = [1,2,3,4]
     menu_choice = int(input("""Please choose a number:
     1. Make a deposit
-    2. Make a withdrawl
+    2. Make a withdrawal
     3. View Account information
     4. Quit
     """))
@@ -37,7 +37,7 @@ def deposit_func(bank_account, deposit_amount):
 def withdraw_func(bank_account, withdraw):
     while bank_account.balance - withdraw < 0:
         withdraw = float(input("You are overdrawn. Please withdraw a lower amount: "))   
-    account_balance = bank_account.withdrawl(withdraw)
+    account_balance = bank_account.withdraw(withdraw)
     return account_balance
 
 def acc_info(bank_account):
