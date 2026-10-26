@@ -9,10 +9,12 @@ while logged_in:
     menu_choice = menu()
 
     if menu_choice == 1:
-        depo, account_balance = deposit()
+        deposit_amount = int(input("How much would you like to deposit? "))
+        account_balance = deposit_func(deposit_amount)
         print()
     elif menu_choice == 2:
-        withdr, account_balance = withdraw()
+        withdraw = int(input("How much would you like to withdraw? "))
+        account_balance = withdraw_func(withdraw)
     elif menu_choice == 3:
         acc_name, acc_number, acc_balance = acc_info()
         print(f"""Account Name: {acc_name}

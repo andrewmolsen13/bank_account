@@ -19,25 +19,23 @@ class account:
 
 def menu():
     menu = [1,2,3,4]
-    menu_choice = input("""Please choose a number:
+    menu_choice = int(input("""Please choose a number:
     1. Make a deposit
     2. Make a withdrawl
     3. View Account information
     4. Quit
-    """)
+    """))
     while menu_choice not in menu:
-        menu_choice = input("Invalid choice. Please enter a number 1-4. ")
+        menu_choice = int(input("Invalid choice. Please enter a number 1-4. "))
     return menu_choice
 
-def deposit():
-    deposit = input("How much would you like to deposit? ")
-    account_balance = account.deposit(deposit)
-    return deposit, account_balance
+def deposit_func(deposit_amount):
+    account_balance = account.deposit(deposit_amount)
+    return account_balance
 
-def withdraw():
-    withdraw = input("How much would you like to withdraw? ")
+def withdraw_func(withdraw):   
     account_balance = account.deposit(withdraw)
-    return withdraw, account_balance
+    return account_balance
 
 def acc_info():
     acc_name = account.account_name
