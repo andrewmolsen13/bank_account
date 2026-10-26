@@ -36,7 +36,10 @@ def deposit_func(bank_account, deposit_amount):
 
 def withdraw_func(bank_account, withdraw):
     while bank_account.balance - withdraw < 0:
-        withdraw = float(input("You are overdrawn. Please withdraw a lower amount: "))   
+        try:
+            withdraw = float((input("This would put your account below 0. Please input another amount: ")))
+        except ValueError:
+            print("Invalid input. Pleas input a number")
     account_balance = bank_account.withdraw(withdraw)
     return account_balance
 
