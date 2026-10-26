@@ -34,8 +34,10 @@ def deposit_func(bank_account, deposit_amount):
     account_balance = bank_account.deposit(deposit_amount)
     return account_balance
 
-def withdraw_func(bank_account, withdraw):   
-    account_balance = bank_account.deposit(withdraw)
+def withdraw_func(bank_account, withdraw):
+    while bank_account.balance - withdraw < 0:
+        withdraw = float(input("You are overdrawn. Please withdraw a lower amount: "))   
+    account_balance = bank_account.withdrawl(withdraw)
     return account_balance
 
 def acc_info(bank_account):
